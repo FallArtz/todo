@@ -3,16 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Get Things Done</title>
     <!-- This line connects your CSS file to your HTML file -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/page2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
-
-    <h1 style="display: grid; place-items: center;">Perfect Day Planner</h1>
-    <p style="display: grid; place-items: center;">Design your perfect day!</p>
+      <header>
+        <h1 class="page-title">Perfect Day Planner</h1>
+    </header>
+    <nav>
+        <p><a href="./index.html">Home</a></p>
+        <p><a href="./page1.html">To-Do List</a></p>
+        <p><a href="./page2.html">Day Planner</a></p>
+    </nav>
+    <br>
+    <h2 style="display: grid; place-items: center;">Design your perfect day!</h2>
 
 
  <div class="morning">
@@ -132,8 +139,9 @@ document.querySelectorAll(".downloadBtn").forEach((btn, sectionIndex) => {
 
 </script>
 
-
-
+  <footer>
+    <p class="center">&copy; Chloe 2026.</p>
+  </footer> 
 </body>
 
 </html>
