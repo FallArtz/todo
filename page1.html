@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Get Things Done</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+    <header>
+        <h1 class="page-title">To-Do List</h1>
+    </header>
+    <nav>
+        <p><a href="./index.html">Home</a></p>
+        <p><a href="./page1.html">To-Do List</a></p>
+        <p><a href="./page2.html">Day Planner</a></p>
+    </nav>
+
+    <section>
+        <div class="container">
+            <h1 class="title">My Tasks</h1>
+          
+            <div class="input-area">
+                <input id="task-input" type="text" placeholder="Write something you need to get done. . .">
+              <button id="add-btn">Add Task!</button>
+            </div>
+          
+            <ul id="task-list"></ul>
+          </div>         
+    </section>
+
+    <h2 class="uc-h2">Uncompleted Tasks</h2>
+    <section class="uncompleted-section">
+        <ul id="uncompleted-list"></ul>
+        <button id="clear-uncompleted-btn" class="clear-btn">Delete All</button>
+    </section>
+
+    <h2 class="c-h2">Completed Tasks</h2>
+    <section class="completed-section">
+        <ul id="completed-list"></ul>
+        <button id="clear-completed-btn" class="clear-btn">Clear Completed</button>
+    </section>
+    <script src="javascript/script.js"></script>
+
+    <div id="confirm-modal" class="modal-overlay">
+        <div class="modal-box">
+          <p id="modal-message">Are you sure?</p>
+      
+          <div class="modal-buttons">
+            <button id="modal-cancel">Cancel</button>
+            <button id="modal-confirm">Yes</button>
+          </div>
+        </div>
+      </div>
+      <footer>
+      <p class="center">&copy; Yunxi 2026.</p>
+    </footer>      
+</body>
+</html>
