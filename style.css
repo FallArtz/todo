@@ -1,0 +1,103 @@
+html{
+background: #f0c57a;
+background: linear-gradient(0deg,rgba(240, 197, 122, 1) 0%, rgba(255, 179, 179, 1) 50%, rgba(208, 188, 247, 1) 100%);
+background-size: 500px 800px;
+}
+
+
+
+
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+.morning div {
+  border: 5px solid pink;   /* or orange for midday */
+  border-radius: 10px;
+  padding: 20px;
+  background: #fff;
+  width: 300px;
+  height: 430px;
+  margin-left: 50px;
+}
+
+
+.midday div {
+  border: 5px solid rgb(255, 215, 145);   /* or orange for midday */
+  border-radius: 10px;
+  padding: 20px;
+  background: #fff;
+  width: 300px;
+  height: 430px;
+  margin-left: 450px;
+  margin-top: -520px;
+}
+
+.night div{
+  border: 5px solid rgb(197, 153, 235);   
+  border-radius: 10px;
+  padding: 20px;
+  background: #fff;
+  width: 300px;
+  height: 430px;
+  margin-left: 850px;
+  margin-top: -502px;
+  
+}
+
+
+
+
+
+
+
+#buttons {
+margin-left: 530px;
+}
+
+#buttons1{
+
+margin-left: 120px;
+
+}
+
+#buttons2{
+
+margin-left: 935px;
+
+}
+
+/*
+
+.container {
+flex-direction: column;
+  display: flex;
+  background-color: #6870c2;
+  color: #7b9fd1;
+  justify-content: space-between;
+font-family: 'Courier New', Courier, monospace;
+
+}
+
+
+.container div {
+  background-color: #b4cbe0;
+  margin: 10px;
+  padding: 20px;
+  font-size: 12px;
+  text-align: center;
+
+
+}
+
+*/
