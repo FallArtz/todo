@@ -3,24 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <!-- This line connects your CSS file to your HTML file -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Get Things Done</title>
-
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
-    <header>
-        <h1 class="page-title">Day Planner</h1>
-    </header>
-    <nav>
-        <p><a href="./index.html">Home</a></p>
-        <p><a href="./page1.html">To-Do List</a></p>
-        <p><a href="./page2.html">Day Planner</a></p>
-    </nav>
-    <script src="javascript/script.js"></script>
-    <footer>
-        <p class="center">&copy; Chloe 2026.</p>
-    </footer>  
+
+    <h1 style="display: grid; place-items: center;">Perfect Day Planner</h1>
+    <p style="display: grid; place-items: center;">Design your perfect day!</p>
+
+
+ <div class="morning">
+  <div class="text-area">
+    <textarea rows="4" cols="38" placeholder="7am"></textarea>
+    <textarea rows="4" cols="38" placeholder="8am"></textarea>
+    <textarea rows="4" cols="38" placeholder="9am"></textarea>
+    <textarea rows="4" cols="38" placeholder="10am"></textarea>
+    <textarea rows="4" cols="38" placeholder="11am"></textarea>
+    <textarea rows="4" cols="38" placeholder="12pm"></textarea>
+
+
+   
+    
+  </div>
+</div>
+
+ <div id="buttons1">
+    <button class="saveBtn">Save Text</button>
+    <button class="downloadBtn">Download PNG</button>
+</div>
+    
+
+
+<br>
+
+ <div class="midday">
+  <div class="text-area">
+    
+    <textarea rows="4" cols="38" placeholder="1pm"></textarea>
+    <textarea rows="4" cols="38" placeholder="2pm"></textarea>
+    <textarea rows="4" cols="38" placeholder="3pm"></textarea>
+    <textarea rows="4" cols="38" placeholder="4pm"></textarea>
+    <textarea rows="4" cols="38" placeholder="5pm"></textarea>
+    <textarea rows="4" cols="38" placeholder="6pm"></textarea>
+   
+  </div>
+ 
+</div>
+ <div id="buttons">
+    <button class="saveBtn">Save Text</button>
+    <button class="downloadBtn">Download PNG</button>
+
+</div>
+
+ <div class="night">
+  <div class="text-area">
+    
+    <textarea rows="4" cols="38" placeholder="7pm"></textarea>
+    <textarea rows="4" cols="38" placeholder="8pm"></textarea>
+    <textarea rows="4" cols="38" placeholder="9pm"></textarea>
+    <textarea rows="4" cols="38" placeholder="10pm"></textarea>
+    <textarea rows="4" cols="38" placeholder="11pm"></textarea>
+    <textarea rows="4" cols="38" placeholder="12am"></textarea>
+   
+  </div>
+ 
+</div>
+ <div id="buttons2">
+    <button class="saveBtn">Save Text</button>
+    <button class="downloadBtn">Download PNG</button>
+
+</div>
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+
+<script>
+
+// SAVE BUTTONS — each saves only its own section
+document.querySelectorAll(".saveBtn").forEach((btn, sectionIndex) => {
+  btn.addEventListener("click", () => {
+    const textareas = document.querySelectorAll(".text-area")[sectionIndex].querySelectorAll("textarea");
+
+    textareas.forEach((ta, textareaIndex) => {
+      localStorage.setItem(`savedText_${sectionIndex}_${textareaIndex}`, ta.value);
+    });
+
+    alert(`Section ${sectionIndex + 1} saved!`);
+  });
+});
+
+
+// LOAD SAVED DATA ON PAGE LOAD — each section loads its own saved text
+document.querySelectorAll(".text-area").forEach((section, sectionIndex) => {
+  const textareas = section.querySelectorAll("textarea");
+
+  textareas.forEach((ta, textareaIndex) => {
+    ta.value = localStorage.getItem(`savedText_${sectionIndex}_${textareaIndex}`) || "";
+  });
+});
+
+
+// DOWNLOAD BUTTONS — each downloads only its own section
+document.querySelectorAll(".downloadBtn").forEach((btn, sectionIndex) => {
+  btn.addEventListener("click", () => {
+    const box = document.querySelectorAll(".text-area")[sectionIndex];
+
+    html2canvas(box, {
+      backgroundColor: null,
+      scale: 2
+    }).then(canvas => {
+      const link = document.createElement("a");
+      link.download = `planner_section_${sectionIndex + 1}.png`;
+      link.href = canvas.toDataURL();
+      link.click();
+    });
+  });
+});
+
+
+</script>
+
+
+
 </body>
+
 </html>
