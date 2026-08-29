@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Alice&family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-html{
-background: #f0c57a;
-background: linear-gradient(0deg,rgba(240, 197, 122, 1) 0%, rgba(255, 179, 179, 1) 50%, rgba(208, 188, 247, 1) 100%);
-background-size: 500px 800px;
-}
-
 body {
     margin: 0;
     padding: 0;
